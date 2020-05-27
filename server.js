@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 
 app.get("/mirth", (req, res, next) => {
+  console.log(req.query.hl7);
   res.json(req.query.hl7);
 });
 
