@@ -1,0 +1,820 @@
+<channel version="3.8.0">
+  <id>ce57ccdc-a7e8-4e9d-b75f-9a6090df7598</id>
+  <nextMetaDataId>2</nextMetaDataId>
+  <name>NodeIntegration</name>
+  <description></description>
+  <revision>18</revision>
+  <sourceConnector version="3.8.0">
+    <metaDataId>0</metaDataId>
+    <name>sourceConnector</name>
+    <properties class="com.mirth.connect.connectors.tcp.TcpReceiverProperties" version="3.8.0">
+      <pluginProperties/>
+      <listenerConnectorProperties version="3.8.0">
+        <host>0.0.0.0</host>
+        <port>6661</port>
+      </listenerConnectorProperties>
+      <sourceConnectorProperties version="3.8.0">
+        <responseVariable>d1</responseVariable>
+        <respondAfterProcessing>true</respondAfterProcessing>
+        <processBatch>false</processBatch>
+        <firstResponse>true</firstResponse>
+        <processingThreads>1</processingThreads>
+        <resourceIds class="linked-hash-map">
+          <entry>
+            <string>Default Resource</string>
+            <string>[Default Resource]</string>
+          </entry>
+        </resourceIds>
+        <queueBufferSize>1000</queueBufferSize>
+      </sourceConnectorProperties>
+      <transmissionModeProperties class="com.mirth.connect.model.transmission.framemode.FrameModeProperties">
+        <pluginPointName>Basic</pluginPointName>
+        <startOfMessageBytes></startOfMessageBytes>
+        <endOfMessageBytes></endOfMessageBytes>
+      </transmissionModeProperties>
+      <serverMode>true</serverMode>
+      <remoteAddress></remoteAddress>
+      <remotePort></remotePort>
+      <overrideLocalBinding>false</overrideLocalBinding>
+      <reconnectInterval>5000</reconnectInterval>
+      <receiveTimeout>0</receiveTimeout>
+      <bufferSize>65536</bufferSize>
+      <maxConnections>10</maxConnections>
+      <keepConnectionOpen>true</keepConnectionOpen>
+      <dataTypeBinary>false</dataTypeBinary>
+      <charsetEncoding>DEFAULT_ENCODING</charsetEncoding>
+      <respondOnNewConnection>0</respondOnNewConnection>
+      <responseAddress></responseAddress>
+      <responsePort></responsePort>
+    </properties>
+    <transformer version="3.8.0">
+      <elements/>
+      <inboundDataType>HL7V2</inboundDataType>
+      <outboundDataType>HL7V2</outboundDataType>
+      <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.0">
+          <handleRepetitions>true</handleRepetitions>
+          <handleSubcomponents>true</handleSubcomponents>
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <stripNamespaces>true</stripNamespaces>
+          <segmentDelimiter>\r</segmentDelimiter>
+          <convertLineBreaks>true</convertLineBreaks>
+        </serializationProperties>
+        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.0">
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <segmentDelimiter>\r</segmentDelimiter>
+        </deserializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.0">
+          <splitType>MSH_Segment</splitType>
+          <batchScript></batchScript>
+        </batchProperties>
+        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.0">
+          <segmentDelimiter>\r</segmentDelimiter>
+          <successfulACKCode>AA</successfulACKCode>
+          <successfulACKMessage></successfulACKMessage>
+          <errorACKCode>AE</errorACKCode>
+          <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+          <rejectedACKCode>AR</rejectedACKCode>
+          <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+          <msh15ACKAccept>false</msh15ACKAccept>
+          <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+        </responseGenerationProperties>
+        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.0">
+          <successfulACKCode>AA,CA</successfulACKCode>
+          <errorACKCode>AE,CE</errorACKCode>
+          <rejectedACKCode>AR,CR</rejectedACKCode>
+          <validateMessageControlId>true</validateMessageControlId>
+          <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+          <originalIdMapVariable></originalIdMapVariable>
+        </responseValidationProperties>
+      </inboundProperties>
+      <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.0">
+        <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.0">
+          <handleRepetitions>true</handleRepetitions>
+          <handleSubcomponents>true</handleSubcomponents>
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <stripNamespaces>true</stripNamespaces>
+          <segmentDelimiter>\r</segmentDelimiter>
+          <convertLineBreaks>true</convertLineBreaks>
+        </serializationProperties>
+        <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.0">
+          <useStrictParser>false</useStrictParser>
+          <useStrictValidation>false</useStrictValidation>
+          <segmentDelimiter>\r</segmentDelimiter>
+        </deserializationProperties>
+        <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.0">
+          <splitType>MSH_Segment</splitType>
+          <batchScript></batchScript>
+        </batchProperties>
+        <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.0">
+          <segmentDelimiter>\r</segmentDelimiter>
+          <successfulACKCode>AA</successfulACKCode>
+          <successfulACKMessage></successfulACKMessage>
+          <errorACKCode>AE</errorACKCode>
+          <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+          <rejectedACKCode>AR</rejectedACKCode>
+          <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+          <msh15ACKAccept>false</msh15ACKAccept>
+          <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+        </responseGenerationProperties>
+        <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.0">
+          <successfulACKCode>AA,CA</successfulACKCode>
+          <errorACKCode>AE,CE</errorACKCode>
+          <rejectedACKCode>AR,CR</rejectedACKCode>
+          <validateMessageControlId>true</validateMessageControlId>
+          <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+          <originalIdMapVariable></originalIdMapVariable>
+        </responseValidationProperties>
+      </outboundProperties>
+    </transformer>
+    <filter version="3.8.0">
+      <elements/>
+    </filter>
+    <transportName>TCP Listener</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <waitForPrevious>true</waitForPrevious>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector version="3.8.0">
+      <metaDataId>1</metaDataId>
+      <name>NodeServer</name>
+      <properties class="com.mirth.connect.connectors.http.HttpDispatcherProperties" version="3.8.0">
+        <pluginProperties/>
+        <destinationConnectorProperties version="3.8.0">
+          <queueEnabled>false</queueEnabled>
+          <sendFirst>false</sendFirst>
+          <retryIntervalMillis>10000</retryIntervalMillis>
+          <regenerateTemplate>false</regenerateTemplate>
+          <retryCount>0</retryCount>
+          <rotate>false</rotate>
+          <includeFilterTransformer>false</includeFilterTransformer>
+          <threadCount>1</threadCount>
+          <threadAssignmentVariable></threadAssignmentVariable>
+          <validateResponse>false</validateResponse>
+          <resourceIds class="linked-hash-map">
+            <entry>
+              <string>Default Resource</string>
+              <string>[Default Resource]</string>
+            </entry>
+          </resourceIds>
+          <queueBufferSize>1000</queueBufferSize>
+          <reattachAttachments>true</reattachAttachments>
+        </destinationConnectorProperties>
+        <host>http://localhost:3001/mirth</host>
+        <useProxyServer>false</useProxyServer>
+        <proxyAddress></proxyAddress>
+        <proxyPort></proxyPort>
+        <method>post</method>
+        <headers class="linked-hash-map">
+          <entry>
+            <string>Content-Type</string>
+            <list>
+              <string>application/json</string>
+            </list>
+          </entry>
+          <entry>
+            <string>Accept</string>
+            <list>
+              <string>application/json</string>
+            </list>
+          </entry>
+        </headers>
+        <parameters class="linked-hash-map"/>
+        <responseXmlBody>false</responseXmlBody>
+        <responseParseMultipart>true</responseParseMultipart>
+        <responseIncludeMetadata>false</responseIncludeMetadata>
+        <responseBinaryMimeTypes>application/.*(?&lt;!json|xml)$|image/.*|video/.*|audio/.*</responseBinaryMimeTypes>
+        <responseBinaryMimeTypesRegex>true</responseBinaryMimeTypesRegex>
+        <multipart>false</multipart>
+        <useAuthentication>false</useAuthentication>
+        <authenticationType>Basic</authenticationType>
+        <usePreemptiveAuthentication>false</usePreemptiveAuthentication>
+        <username></username>
+        <password></password>
+        <content>${message.transformedData}</content>
+        <contentType>application/json</contentType>
+        <dataTypeBinary>false</dataTypeBinary>
+        <charset>UTF-8</charset>
+        <socketTimeout>30000</socketTimeout>
+      </properties>
+      <transformer version="3.8.0">
+        <elements>
+          <com.mirth.connect.plugins.javascriptstep.JavaScriptStep version="3.8.0">
+            <sequenceNumber>0</sequenceNumber>
+            <enabled>true</enabled>
+            <script>//Global Variables
+var secret = &apos;0xczmWeoDudwIfwoM9QVpZfRmS09ggTQEtL0BLNGFXrWkosjT890fPKwgdGpIsXY&apos;;
+var uuid = &apos;3d31547739dd7d21fcc032df72a26082&apos;;
+var jwtToken = &apos;teste&apos;;
+var results = [];
+var regex = /[A-Za-z]*?=$/
+var pdf = &apos;&apos;;
+var lab_report_pdf = &apos;&apos;;
+var patient_friendly_pdf = &apos;&apos;;
+var url = &apos;&apos;
+var collectionDate = &apos;&apos;;
+//Channel Variables
+channelMap.put(&apos;jwtToken&apos;, jwtToken);
+channelMap.put(&apos;orderId&apos;, msg[&apos;OBR&apos;][0][&apos;OBR.2&apos;][&apos;OBR.2.1&apos;].toString());
+//channelMap.put(&apos;orderId&apos;, msg[&apos;PID&apos;][&apos;PID.2&apos;][&apos;PID.2.1&apos;].toString());
+channelMap.put(&apos;orderCode&apos;, msg[&apos;OBR&apos;][0][&apos;OBR.4&apos;][&apos;OBR.4.1&apos;].toString());
+channelMap.put(&apos;account&apos;, msg[&apos;MSH&apos;][&apos;MSH.4&apos;][&apos;MSH.4.1&apos;].toString());
+channelMap.put(&apos;patientName&apos;, msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.1&apos;].toString() + msg[&apos;PID&apos;][&apos;PID.5&apos;][&apos;PID.5.2&apos;].toString() );
+channelMap.put(&apos;dob&apos;, msg[&apos;PID&apos;][&apos;PID.7&apos;][&apos;PID.7.1&apos;].toString());
+for (var i = 0; i &lt; getArrayOrXmlLength(msg[&apos;PID&apos;]); i++) {
+	var obrGroup = getSegmentsAfter(msg, msg.ORC[i], &apos;OBR&apos;, false);
+  	for (var j = 0; j &lt;= obrGroup.length-1; j++) {
+		var obxGroup = getSegmentsAfter(msg, msg.OBR[j], &apos;OBX&apos;, false);
+		for (var k = 0; k &lt;= obxGroup.length-1; k++) {
+			//Results Variables
+			var orderCode = obrGroup[j][&apos;OBR.4&apos;][&apos;OBR.4.1&apos;].toString();
+			var orderName = obrGroup[j][&apos;OBR.4&apos;][&apos;OBR.4.2&apos;].toString();
+			var resultCode = obxGroup[k][&apos;OBX.3&apos;][&apos;OBX.3.1&apos;].toString();
+			var resultName = obxGroup[k][&apos;OBX.3&apos;][&apos;OBX.3.2&apos;].toString();
+			var labAbnormalFlag = &apos;&apos;
+			var value = obxGroup[k][&apos;OBX.5&apos;][&apos;OBX.5.1&apos;].toString();
+			var resultStatus = obxGroup[k][&apos;OBX.11&apos;][&apos;OBX.11.1&apos;].toString();
+			var notes = [];
+			var obx8 = obxGroup[k][&apos;OBX.8&apos;][&apos;OBX.8.1&apos;].toString();
+			var valueType = obxGroup[k][&apos;OBX.2&apos;][&apos;OBX.2.1&apos;].toString();
+			var observationDate = obxGroup[k][&apos;OBX.14&apos;][&apos;OBX.14.1&apos;].toString();
+			var unitsOfMesurement = obxGroup[k][&apos;OBX.6&apos;][&apos;OBX.6.1&apos;].toString();
+			var labReferenceRange = obxGroup[k][&apos;OBX.7&apos;][&apos;OBX.7.1&apos;].toString();
+			var labFacility = obxGroup[k][&apos;OBX.15&apos;][&apos;OBX.15.1&apos;].toString();
+			collectionDate = obrGroup[j][&apos;OBR.7&apos;][&apos;OBR.7.1&apos;].toString();
+			//Setup PDF
+			if (obxGroup[k][&apos;OBX.2&apos;][&apos;OBX.2.1&apos;].toString() == &apos;ED&apos;) {
+		  		var pdfLabId = obxGroup[k][&apos;OBX.3&apos;][&apos;OBX.3.1&apos;].toString()
+			  	if (pdfLabId ==  &apos;LAB1&apos; || pdfLabId ==  &apos;LAB2&apos; || pdfLabId ==  &apos;LAB3&apos;) {
+			  		patient_friendly_pdf += obxGroup[k][&apos;OBX.5&apos;][&apos;OBX.5.5&apos;].toString();
+			  	} else {
+			  		lab_report_pdf += obxGroup[k][&apos;OBX.5&apos;][&apos;OBX.5.5&apos;].toString();
+			  	}
+		  		continue;
+			}
+			//Setup Lab AbnormalFlag
+			if (obx8.length == 0) {
+			  labAbnormalFlag = &apos;N&apos;
+			}  else {
+			  labAbnormalFlag = obxGroup[k][&apos;OBX.8&apos;][&apos;OBX.8.1&apos;].toString()	
+			}
+			//handle covid order
+			if(orderCode == &apos;TH68-0&apos;){
+				var uppercaseValue = value.toUpperCase();
+				if(uppercaseValue == &apos;TNP&apos;){
+					labAbnormalFlag = &apos;A&apos;
+				}
+				if(uppercaseValue == &apos;INCONCLUSIVE&apos;){
+					labAbnormalFlag = &apos;A&apos;
+				}
+				if(uppercaseValue == &apos;QNS&apos;){
+					labAbnormalFlag = &apos;A&apos;
+				}
+				if(uppercaseValue == &apos;INVALID&apos;){
+					labAbnormalFlag = &apos;A&apos;
+				}
+				if(uppercaseValue == &apos;SARS-COV-2 INCONCLUSIVE&apos;){
+					labAbnormalFlag = &apos;A&apos;
+				}
+				nteGroup = getSegmentsAfter(msg, msg[&apos;PID&apos;], &apos;NTE&apos;, false)
+				value = transformCovidValue(value)
+			}else{
+				nteGroup = getSegmentsAfter(msg, obxGroup[k], &apos;NTE&apos;, false)	
+			}
+			for (w =0; w &lt; nteGroup.length; w++) {
+				note = nteGroup[w][&apos;NTE.3&apos;][&apos;NTE.3.1&apos;].toString()
+				if(note){
+					notes.push(note.trim());
+				}
+		     }
+		     notes = notes.join(&quot;\n\n&quot;);
+			results.push({
+			  order_code: orderCode,
+			  order_name: orderName,
+			  result_code: resultCode,
+			  result_name: resultName,
+			  value: value,
+			  value_type: valueType,
+			  observation_date: observationDate,
+			  units_of_measurement: unitsOfMesurement,
+			  lab_reference_range: labReferenceRange,
+			  notes: notes,
+			  lab_abnormal_flag: labAbnormalFlag,
+			  lab_facility: labFacility,
+			  result_status: resultStatus
+			})
+		}
+	}
+}
+tmp[&apos;collection_date&apos;] = collectionDate;
+tmp[&apos;patient_friendly_pdf&apos;] = patient_friendly_pdf;
+tmp[&apos;lab_report_pdf&apos;] = lab_report_pdf;
+tmp[&apos;results&apos;] = results;</script>
+          </com.mirth.connect.plugins.javascriptstep.JavaScriptStep>
+        </elements>
+        <inboundTemplate encoding="base64">TVNIfF5+XCZ8TEFCfEhPVXx8MjEzNTgwMHwyMDA4MDUxNTE3NDk0OHx8T1JVXlIwMXwyMDA4MDUx
+NTc4NTg4NzY1MDAwMHxEfDIuM3x8fHx8fHwKUElEfDF8fEhMMDA3NTQ1UHx8RE9FXkNIUklTfHwx
+OTgwMDgwMXxNfHx8fHx8fHx8fDAwMDcxMTF8fHx8fHx8fHx8fHx8Ck9SQ3xSRXwwMDA3MTExfEhM
+MDA3NTQ1UHx8SVB8fHx8fHx8Qjk1NTk0XkZJU0NIRVJeU1RFUEhFTl58fHx8fHx8fApPQlJ8MXww
+MDA3MTExfEhMMDA3NTQ1UHw2NTE3U0JYPV5NSUNST0FMQlVNSU4vQ1JFQVRJTklORSBSQVRJTywg
+UkFORE9NIFVSSU5FIF5eNjUxN1NCWD1eTUlDUk9BTEJVTUlOL0NSRUFUSU5JTkUgUkFUSU8sIFJB
+TkRPTSBVUklORSB8fHwyMDA4MDUxMjEwMDAwMHx8fHx8fHwyMDA4MDUxMjExMjIwMHx8Qjk1NTk0
+XkZJU0NIRVJeU1RFUEhFTl58fHx8Xl5eODQ1OVNCPV5DUkVBVElOSU5FLCBSQU5ET00gVVJJTkV8
+SExeUVVFU1QgRElBR05PU1RJQ1MtSE9VU1RPTl44OTMzIElOVEVSQ0hBTkdFIERSXkhPVVNUT05e
+VFheNzcwNTReQSBNfDIwMDgwNTE0MTMwODAwfHx8Rnx8fHx8fHx8fHx8fHx8fHx8fHwKT0JYfDF8
+Tk18MjUwMjY1MDBeQ1JFQVRJTklORSwgUkFORE9NIFVSSU5FXl4yNTAyNjUwMF5DUkVBVElOSU5F
+LCBSQU5ET00gVVJJTkVefHwxMDB8TUcvREx8MjAtMzcwfE58fHxGfHx8MjAwODA1MTQxMzA4MDB8
+SExeXkx8fHwKT0JSfDJ8MDAwNzExMXxITDAwNzU0NVB8NjUxN1NCWD1eXl42NTE3U0JYPV58fHwy
+MDA4MDUxMjEwMDAwMHx8fHx8fHwyMDA4MDUxMjExMjIwMHx8Qjk1NTk0XkZJU0NIRVJeU1RFUEhF
+Tl58fHx8Xl5eJVNCNjUxN15NSUNST0FMQlVNSU4vQ1JFQVRJTklORSBSQVRJTywgUkFORE9NIFVS
+SU5FfEhMXlFVRVNUIERJQUdOT1NUSUNTLUhPVVNUT05eODkzMyBJTlRFUkNIQU5HRSBEUl5IT1VT
+VE9OXlRYXjc3MDU0XkEgTXwyMDA4MDUxNDEzMDgwMHx8fEZ8fHx8fHx8fHx8fHx8fHx8fHx8Ck9C
+WHwxfE5NfDUwMDYwNzEwXk1JQ1JPQUxCVU1JTl5eNTAwNjA3MTBeTUlDUk9BTEJVTUlOXnx8NDAw
+fE1HL0RMfHx8fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDJ8Tk18NTAwNjExMDBe
+TUlDUk9BTEJVTUlOL0NSRUFUSU5JTkUgUkFUSU8sIFJBTkRPTSBVUklORV5eNTAwNjExMDBeTUlD
+Uk9BTEJVTUlOL0NSRUFUSU5JTkUgUkFUSU8sIFJBTkRPTSBVUklORV58fDR8TUNHL01HIENSRUFU
+fDwzMHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck5URXwxfHwgfApOVEV8Mnx8ICAg
+IE1JQ1JPQUxCVU1JTi9DUkVBVElOSU5FIFJBVElPIElTIFVTRUQgVE8gQ0xBU1NJRll8Ck5URXwz
+fHxQQVRJRU5UUyBBUyBCRUlORyBOT1JNQUwgKDwzMCBNQ0cvTUcgQ1JFQVRJTklORSksIEhBVklO
+RyB8Ck5URXw0fHxNSUNST0FMQlVNSU5VUklBICgzMC0zMDAgTUNHL01HIENSRUFUSU5JTkUpLCBP
+UiBIQVZJTkcgfApOVEV8NXx8Q0xJTklDQUwgQUxCVU1JTlVSSUEgKD4zMDAgTUNHL01HIENSRUFU
+SU5JTkUpLnwKTlRFfDZ8fCB8Ck5URXw3fHwgICAgVEhFIEFNRVJJQ0FOIERJQUJFVEVTIEFTU09D
+SUFUSU9OIFBPU0lUSU9OIFNUQVRFTUVOVHwKTlRFfDh8fE9OIERJQUJFVElDIE5FUEhST1BBVEhZ
+IFNUQVRFUyBUSEFUIE1JQ1JPQUxCVU1JTlVSSUEgSVMgfApOVEV8OXx8UFJFU0VOVCBJRiBUSEUg
+TUlDUk9BTEJVTUlOL0NSRUFUSU5JTkUgUkFUSU8gRVhDRUVEUyAzMCB8Ck5URXwxMHx8TUNHL01H
+IENSRUFUSU5JTkUuIFRIRSBUSFJFU0hPTEQgRk9SIENMSU5JQ0FMIEFMQlVNSU5VUklBfApOVEV8
+MTF8fElTIFJFQUNIRUQgQVQgMzAwIE1DRy9NRyBDUkVBVElOSU5FLiBUSEUgQ0xBU1NJRklDQVRJ
+T04gT0Z8Ck5URXwxMnx8QSBQQVRJRU5UIFNIT1VMRCBCRSBCQVNFRCBVUE9OIEFUIExFQVNUIDIg
+T0YgMyBBQk5PUk1BTHwKTlRFfDEzfHxSRVNVTFRTIE9OIFNQRUNJTUVOUyBDT0xMRUNURUQgV0lU
+SElOIEEgMyBUTyA2IE1PTlRIIFRJTUV8Ck5URXwxNHx8RlJBTUUufApOVEV8MTV8fCB8Ck5URXwx
+Nnx8UkVGRVJFTkNFOnwKTlRFfDE3fHwgfApOVEV8MTh8fEFNRVJJQ0FOIERJQUJFVEVTIEFTU09D
+SUFUSU9OLCBQT1NJVElPTiBTVEFURU1FTlQsIERJQUJFVElDIHwKTlRFfDE5fHxORVBIUk9QQVRI
+WSwgRElBQkVURVMgQ0FSRSwgMjAsIFNVUFBMRU1FTlQgMSwgUzI0LVMyNywgMTk5Ny58Ck5URXwy
+MHx8IHwKT0JSfDN8MDAwNzExMXxITDAwNzU0NVB8MTAyMzFTQj1eQ09NUFJFSEVOU0lWRSBNRVRB
+Qk9MSUMgUEFORUxeXjEwMjMxU0I9XkNPTVBSRUhFTlNJVkUgTUVUQUJPTElDIFBBTkVMfHx8MjAw
+ODA1MTIxMDAwMDB8fHx8fHx8MjAwODA1MTIxMTIyMDB8fEI5NTU5NF5GSVNDSEVSXlNURVBIRU5e
+fHx8fHxITF5RVUVTVCBESUFHTk9TVElDUy1IT1VTVE9OXjg5MzMgSU5URVJDSEFOR0UgRFJeSE9V
+U1RPTl5UWF43NzA1NF5BIE18MjAwODA1MTQxMzA4MDB8fHxQfHx8fHx8fHx8fHx8fHx8fHx8fApP
+Qlh8MXxTVHwyNTAwMDAwMF5HTFVDT1NFXl4yNTAwMDAwMF5HTFVDT1NFXnx8fHx8Tnx8fEZ8fHwy
+MDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MnxTVHwyNTAwMDEwMF5VUkVBIE5JVFJPR0VOIChC
+VU4pXl4yNTAwMDEwMF5VUkVBIE5JVFJPR0VOIChCVU4pXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEz
+MDgwMHxITF5eTHx8fApPQlh8M3xTVHwyNTAwMDIwMF5DUkVBVElOSU5FXl4yNTAwMDIwMF5DUkVB
+VElOSU5FXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8NHxTVHwyNTAw
+MDMwMF5CVU4vQ1JFQVRJTklORSBSQVRJT15eMjUwMDAzMDBeQlVOL0NSRUFUSU5JTkUgUkFUSU9e
+fHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHw1fFNUfDI1MDAwNDAwXlNP
+RElVTV5eMjUwMDA0MDBeU09ESVVNXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8
+fApPQlh8NnxTVHwyNTAwMDUwMF5QT1RBU1NJVU1eXjI1MDAwNTAwXlBPVEFTU0lVTV58fHx8fE58
+fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDd8U1R8MjUwMDA2MDBeQ0hMT1JJREVe
+XjI1MDAwNjAwXkNITE9SSURFXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApP
+Qlh8OHxTVHwyNTAwMDcwMF5DQVJCT04gRElPWElERV5eMjUwMDA3MDBeQ0FSQk9OIERJT1hJREVe
+fHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHw5fFNUfDI1MDAxMDAwXkNB
+TENJVU1eXjI1MDAxMDAwXkNBTENJVU1efHx8fHxOfHx8WHx8fDIwMDgwNTE0MTMwODAwfEhMXl5M
+fHx8Ck9CWHwxMHxTVHwyNTAwMTMwMF5QUk9URUlOLCBUT1RBTF5eMjUwMDEzMDBeUFJPVEVJTiwg
+VE9UQUxefHx8fHxOfHx8Q3x8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwxMXxTVHwyNTAw
+MTQwMF5BTEJVTUlOXl4yNTAwMTQwMF5BTEJVTUlOXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgw
+MHxITF5eTHx8fApPQlh8MTJ8U1R8MjUwMDE1MDBeR0xPQlVMSU5eXjI1MDAxNTAwXkdMT0JVTElO
+Xnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MTN8U1R8MjUwMDE2MDBe
+QUxCVU1JTi9HTE9CVUxJTiBSQVRJT15eMjUwMDE2MDBeQUxCVU1JTi9HTE9CVUxJTiBSQVRJT158
+fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDE0fFNUfDI1MDAxNzAwXkJJ
+TElSVUJJTiwgVE9UQUxeXjI1MDAxNzAwXkJJTElSVUJJTiwgVE9UQUxefHx8fHxOfHx8Rnx8fDIw
+MDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwxNXxTVHwyNTAwMjAwMF5BTEtBTElORSBQSE9TUEhB
+VEFTRV5eMjUwMDIwMDBeQUxLQUxJTkUgUEhPU1BIQVRBU0VefHx8fHxOfHx8Rnx8fDIwMDgwNTE0
+MTMwODAwfEhMXl5MfHx8Ck9CWHwxNnxTVHwyNTAwMjMwMF5BU1ReXjI1MDAyMzAwXkFTVF58fHx8
+fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDE3fFNUfDI1MDAyNDAwXkFMVF5e
+MjUwMDI0MDBeQUxUXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlJ8NHww
+MDA3MTExfEhMMDA3NTQ1UHw2MDhTQj1eSERMIENIT0xFU1RFUk9MXl42MDhTQj1eSERMIENIT0xF
+U1RFUk9MfHx8MjAwODA1MTIxMDAwMDB8fHx8fHx8MjAwODA1MTIxMTIyMDB8fEI5NTU5NF5GSVND
+SEVSXlNURVBIRU5efHx8fHxITF5RVUVTVCBESUFHTk9TVElDUy1IT1VTVE9OXjg5MzMgSU5URVJD
+SEFOR0UgRFJeSE9VU1RPTl5UWF43NzA1NF5BIE18MjAwODA1MTQxMzA4MDB8fHxQfHx8fHx8fHx8
+fHx8fHx8fHx8fApPQlh8MXxTVHwyNTAxNTkwMF5IREwgQ0hPTEVTVEVST0xeXjI1MDE1OTAwXkhE
+TCBDSE9MRVNURVJPTF58fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JSfDV8
+MDAwNzExMXxITDAwNzU0NVB8NjM5OVNCPV5DQkMgKElOQ0xVREVTIERJRkYvUExUKV5eNjM5OVNC
+PV5DQkMgKElOQ0xVREVTIERJRkYvUExUKXx8fDIwMDgwNTEyMTAwMDAwfHx8fHx8fDIwMDgwNTEy
+MTEyMjAwfHxCOTU1OTReRklTQ0hFUl5TVEVQSEVOXnx8fHx8SExeUVVFU1QgRElBR05PU1RJQ1Mt
+SE9VU1RPTl44OTMzIElOVEVSQ0hBTkdFIERSXkhPVVNUT05eVFheNzcwNTReQSBNfDIwMDgwNTE0
+MTMwODAwfHx8UHx8fHx8fHx8fHx8fHx8fHx8fHwKT0JYfDF8U1R8MzAwMDAwMDBeV0hJVEUgQkxP
+T0QgQ0VMTCBDT1VOVF5eMzAwMDAwMDBeV0hJVEUgQkxPT0QgQ0VMTCBDT1VOVF58fHx8fE58fHxG
+fHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDJ8U1R8MzAwMDAxMDBeUkVEIEJMT09EIENF
+TEwgQ09VTlReXjMwMDAwMTAwXlJFRCBCTE9PRCBDRUxMIENPVU5UXnx8fHx8Tnx8fEZ8fHwyMDA4
+MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8M3xTVHwzMDAwMDIwMF5IRU1PR0xPQklOXl4zMDAwMDIw
+MF5IRU1PR0xPQklOXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8NHxT
+VHwzMDAwMDMwMF5IRU1BVE9DUklUXl4zMDAwMDMwMF5IRU1BVE9DUklUXnx8fHx8Tnx8fEZ8fHwy
+MDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8NXxTVHwzMDAwMDQwMF5NQ1ZeXjMwMDAwNDAwXk1D
+Vl58fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDZ8U1R8MzAwMDA1MDBe
+TUNIXl4zMDAwMDUwMF5NQ0hefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9C
+WHw3fFNUfDMwMDAwNjAwXk1DSENeXjMwMDAwNjAwXk1DSENefHx8fHxOfHx8Rnx8fDIwMDgwNTE0
+MTMwODAwfEhMXl5MfHx8Ck9CWHw4fFNUfDMwMDAwNzAwXlJEV15eMzAwMDA3MDBeUkRXXnx8fHx8
+Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8OXxTVHwzMDAwMDgwMF5QTEFURUxF
+VCBDT1VOVF5eMzAwMDA4MDBeUExBVEVMRVQgQ09VTlRefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMw
+ODAwfEhMXl5MfHx8Ck9CWHwxMHxTVHwzMDAwNDYwMF5NUFZeXjMwMDA0NjAwXk1QVl58fHx8fE58
+fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDExfFNUfDMwMDAxNzAwXkFCU09MVVRF
+IE5FVVRST1BISUxTXl4zMDAwMTcwMF5BQlNPTFVURSBORVVUUk9QSElMU158fHx8fE58fHxGfHx8
+MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDEyfFNUfDMwMDAxMTEwXkFCU09MVVRFIEJBTkQg
+TkVVVFJPUEhJTFNeXjMwMDAxMTEwXkFCU09MVVRFIEJBTkQgTkVVVFJPUEhJTFNefHx8fHxOfHx8
+Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwxM3xTVHwzMDAwMTMxMF5BQlNPTFVURSBN
+RVRBTVlFTE9DWVRFU15eMzAwMDEzMTBeQUJTT0xVVEUgTUVUQU1ZRUxPQ1lURVNefHx8fHxOfHx8
+Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwxNHxTVHwzMDAwMTUxMF5BQlNPTFVURSBN
+WUVMT0NZVEVTXl4zMDAwMTUxMF5BQlNPTFVURSBNWUVMT0NZVEVTXnx8fHx8Tnx8fEZ8fHwyMDA4
+MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MTV8U1R8MzAwMDE1MzBeQUJTT0xVVEUgUFJPTVlFTE9D
+WVRFU15eMzAwMDE1MzBeQUJTT0xVVEUgUFJPTVlFTE9DWVRFU158fHx8fE58fHxGfHx8MjAwODA1
+MTQxMzA4MDB8SExeXkx8fHwKT0JYfDE2fFNUfDMwMDAyMTEwXkFCU09MVVRFIExZTVBIT0NZVEVT
+Xl4zMDAwMjExMF5BQlNPTFVURSBMWU1QSE9DWVRFU158fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4
+MDB8SExeXkx8fHwKT0JYfDE3fFNUfDMwMDAyNDAwXkFCU09MVVRFIE1PTk9DWVRFU15eMzAwMDI0
+MDBeQUJTT0xVVEUgTU9OT0NZVEVTXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8
+fApPQlh8MTh8U1R8MzAwMDI3MDBeQUJTT0xVVEUgRU9TSU5PUEhJTFNeXjMwMDAyNzAwXkFCU09M
+VVRFIEVPU0lOT1BISUxTXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8
+MTl8U1R8MzAwMDMwMDBeQUJTT0xVVEUgQkFTT1BISUxTXl4zMDAwMzAwMF5BQlNPTFVURSBCQVNP
+UEhJTFNefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwyMHxTVHwzMDAw
+MzUwMF5BQlNPTFVURSBCTEFTVFNeXjMwMDAzNTAwXkFCU09MVVRFIEJMQVNUU158fHx8fE58fHxG
+fHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDIxfFNUfDMwMDAzNjEwXkFCU09MVVRFIE5V
+Q0xFQVRFRCBSQkNeXjMwMDAzNjEwXkFCU09MVVRFIE5VQ0xFQVRFRCBSQkNefHx8fHxOfHx8Rnx8
+fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwyMnxTVHwzMDAwMDkwMF5ORVVUUk9QSElMU15e
+MzAwMDA5MDBeTkVVVFJPUEhJTFNefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8
+Ck9CWHwyM3xTVHwzMDAwMTEwMF5CQU5EIE5FVVRST1BISUxTXl4zMDAwMTEwMF5CQU5EIE5FVVRS
+T1BISUxTXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MjR8U1R8MzAw
+MDEzMDBeTUVUQU1ZRUxPQ1lURVNeXjMwMDAxMzAwXk1FVEFNWUVMT0NZVEVTXnx8fHx8Tnx8fEZ8
+fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MjV8U1R8MzAwMDE1MDBeTVlFTE9DWVRFU15e
+MzAwMDE1MDBeTVlFTE9DWVRFU158fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwK
+T0JYfDI2fFNUfDMwMDAxNTIwXlBST01ZRUxPQ1lURVNeXjMwMDAxNTIwXlBST01ZRUxPQ1lURVNe
+fHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhMXl5MfHx8Ck9CWHwyN3xTVHwzMDAwMTgwMF5M
+WU1QSE9DWVRFU15eMzAwMDE4MDBeTFlNUEhPQ1lURVNefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMw
+ODAwfEhMXl5MfHx8Ck9CWHwyOHxTVHwzMDAwMjAwMF5SRUFDVElWRSBMWU1QSE9DWVRFU15eMzAw
+MDIwMDBeUkVBQ1RJVkUgTFlNUEhPQ1lURVNefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhM
+Xl5MfHx8Ck9CWHwyOXxTVHwzMDAwMjIwMF5NT05PQ1lURVNeXjMwMDAyMjAwXk1PTk9DWVRFU158
+fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwKT0JYfDMwfFNUfDMwMDAyNTAwXkVP
+U0lOT1BISUxTXl4zMDAwMjUwMF5FT1NJTk9QSElMU158fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4
+MDB8SExeXkx8fHwKT0JYfDMxfFNUfDMwMDAyODAwXkJBU09QSElMU15eMzAwMDI4MDBeQkFTT1BI
+SUxTXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MzJ8U1R8MzAwMDM0
+MDBeQkxBU1RTXl4zMDAwMzQwMF5CTEFTVFNefHx8fHxOfHx8Rnx8fDIwMDgwNTE0MTMwODAwfEhM
+Xl5MfHx8Ck9CWHwzM3xTVHwzMDAwMzYwMF5OVUNMRUFURUQgUkJDXl4zMDAwMzYwMF5OVUNMRUFU
+RUQgUkJDXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MzR8U1R8MzAw
+MDM2MjBeSU5URVJGQUNFIEZMQUdeXjMwMDAzNjIwXklOVEVSRkFDRSBGTEFHXnx8fHx8Tnx8fEZ8
+fHwyMDA4MDUxNDEzMDgwMHxITF5eTHx8fApPQlh8MzV8U1R8MzAwMDQyMDBeQ09NTUVOVChTKV5e
+MzAwMDQyMDBeQ09NTUVOVChTKV58fHx8fE58fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHwK
+T0JSfDZ8MDAwNzExMXxITDAwNzU0NVB8ODg0N1NCPV5QUk9USFJPTUJJTiBUSU1FIFdJVEggSU5S
+Xl44ODQ3U0I9XlBST1RIUk9NQklOIFRJTUUgV0lUSCBJTlJ8fHwyMDA4MDUxMjEwMDAwMHx8fHx8
+fHwyMDA4MDUxMjExMjIwMHx8Qjk1NTk0XkZJU0NIRVJeU1RFUEhFTl58fHx8fEhMXlFVRVNUIERJ
+QUdOT1NUSUNTLUhPVVNUT05eODkzMyBJTlRFUkNIQU5HRSBEUl5IT1VTVE9OXlRYXjc3MDU0XkEg
+TXwyMDA4MDUxNDEzMDgwMHx8fEZ8fHx8fHx8fHx8fHx8fHx8fHx8Ck9CWHwxfFRYfDMwMDQwMjAw
+XklOVEVSTkFUSU9OQUwgTk9STUFMSVpFRCBSQVRJTyAoSU5SKV5eMzAwNDAyMDBeSU5URVJOQVRJ
+T05BTCBOT1JNQUxJWkVEIFJBVElPIChJTlIpXnx8fHx8Tnx8fEZ8fHwyMDA4MDUxNDEzMDgwMHxI
+TF5eTHx8fApOVEV8MXx8ICAgICAgICAgIElOUiBSRUZFUkVOQ0UgSU5URVJWQUwgQVBQTElFUyBU
+TyBQQVRJRU5UU3wKTlRFfDJ8fCAgICAgICAgICBOT1QgT04gQU5USUNPQUdVTEFOVCBUSEVSQVBZ
+OiAgICAgICAgICAgICAgICAgICAgMC45LSAxLjF8Ck5URXwzfHwgfApOVEV8NHx8ICAgICAgICAg
+IFNVR0dFU1RFRCBJTlIgVEhFUkFQRVVUSUMgUkFOR0UgRk9SIE9SQUx8Ck5URXw1fHwgICAgICAg
+ICAgQU5USUNPQUdVTEFOVCBUSEVSQVBZIChTVEFCTFkgQU5USUNPQUdVTEFURUR8Ck5URXw2fHwg
+ICAgICAgICAgUEFUSUVOVFMpfApOVEV8N3x8IHwKTlRFfDh8fCAgICAgICAgICAgICAgICAgICAg
+Uk9VVElORSBUSEVSQVBZOiAgICAgICAgICAgICAgICAgICAgICAgMi4wLSAzLjB8Ck5URXw5fHwg
+fApOVEV8MTB8fCAgICAgICAgICAgICAgICAgICAgUkVDVVJSRU5UIE1ZT0NBUkRJQUwgSU5GQVJD
+VElPTnwKTlRFfDExfHwgICAgICAgICAgICAgICAgICAgIE9SIE1FQ0hBTklDQUwgUFJPU1RIRVRJ
+QyBWQUxWRVM6ICAgICAgIDIuNS0gMy41fApOVEV8MTJ8fCB8Ck5URXwxM3x8IHwKT0JYfDJ8Tk18
+MzAwMzk5MDBeUFJPVEhST01CSU4gVElNRV5eMzAwMzk5MDBeUFJPVEhST01CSU4gVElNRV58fDEw
+MHxTRUNPTkRTfDkuMC0xMS41fEh8fHxGfHx8MjAwODA1MTQxMzA4MDB8SExeXkx8fHw=</inboundTemplate>
+        <outboundTemplate encoding="base64">ewogICJyZXN1bHRzIjogW10KfQ==</outboundTemplate>
+        <inboundDataType>HL7V2</inboundDataType>
+        <outboundDataType>JSON</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.0">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.0">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.0">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.0">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.0">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.8.0">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.8.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </outboundProperties>
+      </transformer>
+      <responseTransformer version="3.8.0">
+        <elements/>
+        <inboundDataType>JSON</inboundDataType>
+        <outboundDataType>HL7V2</outboundDataType>
+        <inboundProperties class="com.mirth.connect.plugins.datatypes.json.JSONDataTypeProperties" version="3.8.0">
+          <batchProperties class="com.mirth.connect.plugins.datatypes.json.JSONBatchProperties" version="3.8.0">
+            <splitType>JavaScript</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+        </inboundProperties>
+        <outboundProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DataTypeProperties" version="3.8.0">
+          <serializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2SerializationProperties" version="3.8.0">
+            <handleRepetitions>true</handleRepetitions>
+            <handleSubcomponents>true</handleSubcomponents>
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <stripNamespaces>true</stripNamespaces>
+            <segmentDelimiter>\r</segmentDelimiter>
+            <convertLineBreaks>true</convertLineBreaks>
+          </serializationProperties>
+          <deserializationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2DeserializationProperties" version="3.8.0">
+            <useStrictParser>false</useStrictParser>
+            <useStrictValidation>false</useStrictValidation>
+            <segmentDelimiter>\r</segmentDelimiter>
+          </deserializationProperties>
+          <batchProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2BatchProperties" version="3.8.0">
+            <splitType>MSH_Segment</splitType>
+            <batchScript></batchScript>
+          </batchProperties>
+          <responseGenerationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseGenerationProperties" version="3.8.0">
+            <segmentDelimiter>\r</segmentDelimiter>
+            <successfulACKCode>AA</successfulACKCode>
+            <successfulACKMessage></successfulACKMessage>
+            <errorACKCode>AE</errorACKCode>
+            <errorACKMessage>An Error Occurred Processing Message.</errorACKMessage>
+            <rejectedACKCode>AR</rejectedACKCode>
+            <rejectedACKMessage>Message Rejected.</rejectedACKMessage>
+            <msh15ACKAccept>false</msh15ACKAccept>
+            <dateFormat>yyyyMMddHHmmss.SSS</dateFormat>
+          </responseGenerationProperties>
+          <responseValidationProperties class="com.mirth.connect.plugins.datatypes.hl7v2.HL7v2ResponseValidationProperties" version="3.8.0">
+            <successfulACKCode>AA,CA</successfulACKCode>
+            <errorACKCode>AE,CE</errorACKCode>
+            <rejectedACKCode>AR,CR</rejectedACKCode>
+            <validateMessageControlId>true</validateMessageControlId>
+            <originalMessageControlId>Destination_Encoded</originalMessageControlId>
+            <originalIdMapVariable></originalIdMapVariable>
+          </responseValidationProperties>
+        </outboundProperties>
+      </responseTransformer>
+      <filter version="3.8.0">
+        <elements/>
+      </filter>
+      <transportName>HTTP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <waitForPrevious>true</waitForPrevious>
+    </connector>
+  </destinationConnectors>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+// Responses returned from here will be stored as &quot;Postprocessor&quot; in the response map
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <undeployScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</undeployScript>
+  <properties version="3.8.0">
+    <clearGlobalChannelMap>true</clearGlobalChannelMap>
+    <messageStorageMode>DEVELOPMENT</messageStorageMode>
+    <encryptData>false</encryptData>
+    <removeContentOnCompletion>false</removeContentOnCompletion>
+    <removeOnlyFilteredOnCompletion>false</removeOnlyFilteredOnCompletion>
+    <removeAttachmentsOnCompletion>false</removeAttachmentsOnCompletion>
+    <initialState>STARTED</initialState>
+    <storeAttachments>true</storeAttachments>
+    <metaDataColumns>
+      <metaDataColumn>
+        <name>SOURCE</name>
+        <type>STRING</type>
+        <mappingName>mirth_source</mappingName>
+      </metaDataColumn>
+      <metaDataColumn>
+        <name>TYPE</name>
+        <type>STRING</type>
+        <mappingName>mirth_type</mappingName>
+      </metaDataColumn>
+    </metaDataColumns>
+    <attachmentProperties version="3.8.0">
+      <type>None</type>
+      <properties/>
+    </attachmentProperties>
+    <resourceIds class="linked-hash-map">
+      <entry>
+        <string>Default Resource</string>
+        <string>[Default Resource]</string>
+      </entry>
+    </resourceIds>
+  </properties>
+  <exportData>
+    <metadata>
+      <enabled>true</enabled>
+      <lastModified>
+        <time>1590611918832</time>
+        <timezone>America/Maceio</timezone>
+      </lastModified>
+      <pruningSettings>
+        <archiveEnabled>true</archiveEnabled>
+      </pruningSettings>
+    </metadata>
+    <codeTemplateLibraries>
+      <codeTemplateLibrary version="3.8.0">
+        <id>5e81e5f1-0b82-4997-9a0d-c3485cf3d416</id>
+        <name>BRL Helper</name>
+        <revision>4</revision>
+        <lastModified>
+          <time>1590609202748</time>
+          <timezone>Etc/UTC</timezone>
+        </lastModified>
+        <description></description>
+        <includeNewChannels>false</includeNewChannels>
+        <enabledChannelIds>
+          <string>bc0988df-1b4f-4e8c-b313-cab27db8570d</string>
+          <string>ce57ccdc-a7e8-4e9d-b75f-9a6090df7598</string>
+        </enabledChannelIds>
+        <disabledChannelIds/>
+        <codeTemplates>
+          <codeTemplate version="3.8.0">
+            <id>bfc34189-48bf-4651-923c-bb24dfd8eaf1</id>
+            <name>Setup value for COVID</name>
+            <revision>3</revision>
+            <lastModified>
+              <time>1590158837916</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/**
+	Convert COVID value to snake case
+
+	@param {String} oldValue - the old value we gonna convert
+*/
+function transformCovidValue(oldValue){
+	 switch (oldValue.toUpperCase()) {
+	  case &apos;TNP&apos;:
+	    return &apos;TNP&apos;;
+	  case &apos;QNS&apos;:
+	    return &apos;QNS&apos;;
+	  case &apos;POSITIVE&apos;:
+	    return &apos;positive&apos;;
+	  case &apos;NEGATIVE&apos;:
+	    return &apos;negative&apos;;
+	  case &apos;POSITIVE FOR 2019-NCOV&apos;:
+	    return &apos;positive&apos;;
+	  case &apos;INCONCLUSIVE&apos;:
+	    return &apos;inconclusive&apos;;
+	  case &apos;SARS-COV-2 INCONCLUSIVE&apos;:
+	    return &apos;inconclusive&apos;;
+	  case &apos;NOT DETECTED&apos;:
+	    return &apos;not_detected&apos;;
+       case &apos;INDETERMINATE&apos;:
+	    return &apos;indeterminate&apos;;
+       case &apos;PRESUMPTIVE POSITIVE FOR 2019-NCOV&apos;:
+	    return &apos;presumptive_positive&apos;;
+	  case &apos;PRESUMPTIVE POS. FOR 2019-NCOV&apos;:
+	    return &apos;presumptive_positive&apos;;
+	  case &apos;INVALID&apos;:
+	    return &apos;invalid&apos;;
+	}
+}</code>
+            </properties>
+          </codeTemplate>
+        </codeTemplates>
+      </codeTemplateLibrary>
+      <codeTemplateLibrary version="3.8.0">
+        <id>11c8345c-2eeb-49c9-b98f-225ce49010ca</id>
+        <name>GetSegmentAfter</name>
+        <revision>4</revision>
+        <lastModified>
+          <time>1590609181407</time>
+          <timezone>Etc/UTC</timezone>
+        </lastModified>
+        <description>GetSegmentAfter</description>
+        <includeNewChannels>false</includeNewChannels>
+        <enabledChannelIds>
+          <string>bc0988df-1b4f-4e8c-b313-cab27db8570d</string>
+          <string>ce57ccdc-a7e8-4e9d-b75f-9a6090df7598</string>
+        </enabledChannelIds>
+        <disabledChannelIds/>
+        <codeTemplates>
+          <codeTemplate version="3.8.0">
+            <id>4908555b-6001-476c-899f-8dd0289f1fee</id>
+            <name>getSegmentAfter</name>
+            <revision>3</revision>
+            <lastModified>
+              <time>1590158838254</time>
+              <timezone>Etc/UTC</timezone>
+            </lastModified>
+            <contextSet>
+              <delegate>
+                <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
+                <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+                <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
+                <contextType>SOURCE_RECEIVER</contextType>
+                <contextType>DESTINATION_DISPATCHER</contextType>
+              </delegate>
+            </contextSet>
+            <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
+              <type>FUNCTION</type>
+              <code>/*
+	Author: Nick Rupley
+	Date Modified: 2/13/2013
+	getSegmentsAfter: Returns an array of segments with the specified name that come after a given segment in the message.
+
+	Arguments
+	---------
+		Required
+		--------
+			root:			The root HL7Message node of the message, or the parent of the segment node.
+			startSeg:		The segment AFTER which to start collecting segments.
+			segName:		The name (String or RegExp) of the segments you want to collect.
+
+		Optional
+		--------
+			consecutiveInd:	If true, indicates that the segments are expected to come directly after startSeg. 
+					If false, segments are collected until another segment with the same name as startSeg is encountered.
+					Defaults to false.
+			stopSegNames:	An array of segment names that, when encountered, stop the collection of segments.
+*/
+
+function getSegmentsAfter(root, startSeg, segName, consecutiveInd, stopSegNames) {
+	function test(str) {
+		return segName instanceof RegExp ? segName.test(str) : segName === str;
+	}
+
+	// The index to start collection is the next one up from the starting segment
+	var index = startSeg.childIndex()+1;
+	// The return array
+	var out = [];
+	// Boolean placeholder to stop iteration
+	var done = false;
+	// Object that will contain all of the stopSegNames strings, bound to a truthy value (1)
+	var stopNames = {};
+	// Indicates whether we have any stop segments
+	var stopNamesInd = false;
+	// If stopSegNames is defined
+	if (stopSegNames !== undefined &amp;&amp; stopSegNames !== null) {
+		// Set our indicator to true
+		stopNamesInd = true;
+		// Add each string in the array to our object
+		for each (name in stopSegNames)
+			stopNames[name] = 1;
+	}
+
+	// Iterate through each child in the root, starting at the segment after startSeg, and
+	// ending at the final segment, or when the done flag is set to true.
+	while (index &lt; root.children().length() &amp;&amp; !done) {
+		// If a stop segment is encountered, stop iteration
+		if (stopNamesInd &amp;&amp; root.children()[index].name().toString() in stopNames)
+			done = true;
+		// If a segment with the same name as startSeg is encountered, stop iteration
+		else if (root.children()[index].name().toString() == startSeg.name().toString() &amp;&amp; !consecutiveInd)
+			done = true;
+		// If we&apos;re only collecting consecutive segments and we encounter a segment with a name other than segName, stop iteration
+		else if (!test(root.children()[index].name().toString()) &amp;&amp; consecutiveInd)
+			done = true;
+		// If all previous tests passed, and the current segment has a name of segName, then add it to our array
+		else if (test(root.children()[index].name().toString()))
+			out.push(root.children()[index]);
+		// Increment our index counter
+		index++;
+	}
+
+	// Return the output array
+	return out;
+}</code>
+            </properties>
+          </codeTemplate>
+        </codeTemplates>
+      </codeTemplateLibrary>
+    </codeTemplateLibraries>
+  </exportData>
+</channel>

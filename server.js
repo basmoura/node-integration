@@ -1,9 +1,11 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
-app.get("/mirth", (req, res, next) => {
-  console.log(req.query.hl7);
-  res.json(req.query.hl7);
+app.use(bodyParser.json());
+app.post("/mirth", (req, res, next) => {
+  console.log(req.body);
+  res.sendStatus(200);
 });
 
 app.listen(3001, () => {
