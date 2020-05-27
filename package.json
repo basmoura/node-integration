@@ -1,0 +1,16 @@
+{
+  "name": "node-intregration",
+  "version": "0.0.1",
+  "description": "",
+  "mail": "server.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "basmoura",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1"
+  }
+}
