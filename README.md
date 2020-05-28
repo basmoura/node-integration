@@ -1,3 +1,5 @@
+![Imgur](https://i.imgur.com/oRo6OVB.png)
+
 install dependencies with `yarn install`
 
 setup mirth local [using this tutorial](https://docs.google.com/document/d/1tkNok7gGbFDyK8WMupBMqwZKMkuPRrl6vZUjwi9Vzzc/edit?ts=5ec67ddb#heading=h.onjrjpluvwp4)
