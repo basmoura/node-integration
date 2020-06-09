@@ -1,10 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const redis = require("redis");
+const pub = redis.createClient();
 
 app.use(bodyParser.json());
 app.post("/mirth", (req, res, next) => {
-  console.log(req.body);
+  channel = req.body["order"];
+  pub.publish(channel, JSON.stringify(req.body));
   res.sendStatus(200);
 });
 
